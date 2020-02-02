@@ -1,4 +1,4 @@
-const requirer = require("inquirer");
+const inquirer = require("inquirer");
 
 function getUserInput() {
 inquirer.prompt([
@@ -26,6 +26,8 @@ inquirer.prompt([
 }
 
 async function main() {
-    const response = await getUserInput();
-    console.log(response)
+    const { username, color } = await getUserInput();
+    console.log(username, color);
 }
+
+main()
