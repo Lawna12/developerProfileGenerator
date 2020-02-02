@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Lawna12/developerProfileGenerator/issues"
   },
-  "homepage": "https://github.com/Lawna12/developerProfileGenerator#readme"
+  "homepage": "https://github.com/Lawna12/developerProfileGenerator#readme",
+  "dependencies": {
+    "inquirer": "^7.0.4"
+  }
 }
