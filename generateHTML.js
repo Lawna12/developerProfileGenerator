@@ -1,6 +1,7 @@
 const fs = require('fs');
 const util = require('util');
 
+const readFilePromise = util.promisify(fs.readFile);
 const writeFilePromise = util.promisify(fs.writeFile);
 
 const generateFileName = function() {
@@ -24,6 +25,10 @@ const easy = async function(usesrname, color) {
     `;
 
     await writeFilePromise(generateFileName(), htmlstring);
+}
+
+const medium = async function(username, color) {
+
 }
 
 module.exports = {
