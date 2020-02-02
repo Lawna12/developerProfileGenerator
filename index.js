@@ -1,35 +1,44 @@
-const inquirer = require("inquirer");
+const inquirer = require('inquirer');
+const axios = require('axios');
 
-const { easy } = require('./generateHTML')
+const { easy, medium, hard } = require('./generateHTML');
 
 function getUserInput() {
-inquirer.prompt([
-    {
-        type: 'input',
-        name: 'username',
-        message: ' Please input your GitHub username:',
-    },
-    {
-        type: 'list',
-        name: 'color',
-        message: 'Please choose your favorite color',
-        choices: [
-            {
-                name: 'Red',
-                value: 'red'
-            },
-            {
-                name: 'Blue',
-                value: 'blue'
-            }
-        ]
-    }
-])
+	return inquirer.prompt([
+		{
+			type: 'input',
+			message: 'Please input your github username',
+			default: 'mankinchi',
+			name: 'username',
+		},
+		// {
+		// 	type: 'list',
+		// 	message: 'Please choose your favorite color',
+		// 	name: 'color',
+		// 	choices: [
+		// 		{
+		// 			name: 'Red',
+		// 			value: 'red'
+		// 		},
+		// 		{
+		// 			name: 'Blue',
+		// 			value: 'blue'
+		// 		},
+		// 	]
+		// }
+	])
+}
+
+async function getGithubInfo(username) {
+	const { data } = await axios.get(`https://api.github.com/users/${username}`);
+	return data;
 }
 
 async function main() {
-    const { username, color } = await getUserInput();
-    easy(username, color)
+	const { username } = await getUserInput();
+
+	const data = await getGithubInfo(username);
+	hard(username, data);
 }
 
-main()
+main();
