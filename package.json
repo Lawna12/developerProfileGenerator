@@ -1,0 +1,19 @@
+{
+  "name": "developerprofilegenerator",
+  "version": "1.0.0",
+  "description": "A command-line application that dynamically generates a PDF profile from a GitHub username.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lawna12/developerProfileGenerator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lawna12/developerProfileGenerator/issues"
+  },
+  "homepage": "https://github.com/Lawna12/developerProfileGenerator#readme"
+}
