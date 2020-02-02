@@ -8,7 +8,7 @@ function getUserInput() {
 		{
 			type: 'input',
 			message: 'Please input your github username',
-			default: 'mankinchi',
+			default: 'Lawna12',
 			name: 'username',
 		},
 		// {
