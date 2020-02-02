@@ -4,12 +4,12 @@ function getUserInput() {
 inquirer.prompt([
     {
         type: 'input',
-        name: '',
+        name: 'username',
         message: ' Please input your GitHub username:',
     },
     {
         type: 'list',
-        name: '',
+        name: 'color',
         message: 'Please choose your favorite color',
         choices: [
             {
@@ -22,8 +22,10 @@ inquirer.prompt([
             }
         ]
     }
-
-
-
 ])
+}
+
+async function main() {
+    const response = await getUserInput();
+    console.log(response)
 }
